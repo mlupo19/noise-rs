@@ -9,7 +9,7 @@
 //! let val = perlin.get([42.4, 37.7, 2.8]);
 //! ```
 
-#![cfg_attr(not(feature = "std"), no_std)]
+// #![cfg_attr(not(feature = "std"), no_std)]
 #![deny(missing_copy_implementations)]
 
 #[macro_use]
