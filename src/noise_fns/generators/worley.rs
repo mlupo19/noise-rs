@@ -25,7 +25,7 @@ pub struct Worley {
     perm_table: PermutationTable,
 }
 
-type DistanceFunction = dyn Fn(&[f64], &[f64]) -> f64 + Sync;
+type DistanceFunction = dyn Fn(&[f64], &[f64]) -> f64 + Sync + Send;
 
 impl Worley {
     pub const DEFAULT_SEED: u32 = 0;
