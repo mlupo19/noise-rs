@@ -167,6 +167,7 @@ where
         let mut point = Vector2::from(point);
 
         let mut result = 0.0;
+        let mut temp = 1.0;
 
         point *= self.frequency;
 
@@ -175,7 +176,8 @@ where
             let mut signal = self.sources[x].get(point.into_array());
 
             // Scale the amplitude appropriately for this frequency.
-            signal *= self.persistence.powi((x as i32) + 1);
+            signal *= temp;
+            temp *= self.persistence;
 
             // Add the signal to the result.
             result += signal;
@@ -198,6 +200,7 @@ where
         let mut point = Vector3::from(point);
 
         let mut result = 0.0;
+        let mut temp = 1.0;
 
         point *= self.frequency;
 
@@ -206,7 +209,8 @@ where
             let mut signal = self.sources[x].get(point.into_array());
 
             // Scale the amplitude appropriately for this frequency.
-            signal *= self.persistence.powi((x as i32) + 1);
+            signal *= temp;
+            temp *= self.persistence;
 
             // Add the signal to the result.
             result += signal;
@@ -229,6 +233,7 @@ where
         let mut point = Vector4::from(point);
 
         let mut result = 0.0;
+        let mut temp = 1.0;
 
         point *= self.frequency;
 
@@ -237,7 +242,8 @@ where
             let mut signal = self.sources[x].get(point.into_array());
 
             // Scale the amplitude appropriately for this frequency.
-            signal *= self.persistence.powi((x as i32) + 1);
+            signal *= temp;
+            temp *= self.persistence;
 
             // Add the signal to the result.
             result += signal;
